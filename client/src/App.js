@@ -48,11 +48,14 @@ function App() {
   const [projectsSelect, setProjectsSelect] = useState(false);
   const [contactSelect, setContactSelect] = useState(false);
 
-  // Score tracker
+  // Score tracker state
   const [score, setScore] = useState(null);
 
+  // Light or Dark state
+  const [darkMode, setDarkMode] = useState(false);
+ 
   return (
-    <div className='lightPicture'>
+    <div className='lightBG'>
       <ThemeProvider theme={theme}>
         <Nav
           loginSelect={loginSelect}
