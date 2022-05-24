@@ -1,5 +1,5 @@
 // Importing React
-import react, { useState } from 'react';
+import { useState } from 'react';
 
 // Importing MUI components
 import { ThemeProvider, createTheme } from '@mui/material/styles';
