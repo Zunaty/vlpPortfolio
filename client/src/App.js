@@ -56,7 +56,7 @@ function App() {
  
   return (
     <div className='lightBG'>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={darkMode ? darkTheme : theme}>
         <Nav
           loginSelect={loginSelect}
           setLoginSelect={setLoginSelect}
