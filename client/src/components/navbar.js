@@ -1,5 +1,5 @@
 // Importing React
-import * as React from 'react';
+import { useState } from 'react';
 
 // Importing MUI
 import {
@@ -8,13 +8,26 @@ import {
   Toolbar,
   Typography,
   Button,
-  IconButton
+  IconButton,
+  Switch
 } from '@mui/material';
 
 import MenuIcon from '@mui/icons-material/Menu'
 
 function Nav(props) {
   console.log(props);
+
+  const {
+    setDarkMode,
+  } = props;
+
+  const [checked, setChecked] = useState(false);
+
+  const handleDarkMode = (e) => {
+    setChecked(e.target.checked);
+    localStorage.setItem("DarkMode", !checked);
+    setDarkMode(!checked);
+  }
 
   return (
     <Box
@@ -29,6 +42,12 @@ function Nav(props) {
           >
             Victor L Perez
           </Typography>
+
+          <Switch
+            checked={checked}
+            onChange={handleDarkMode}
+            inputProps={{ 'aria-label': 'controlled' }}
+          />
 
           <IconButton
             size='large'

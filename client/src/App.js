@@ -52,10 +52,16 @@ function App() {
   const [score, setScore] = useState(null);
 
   // Light or Dark state
-  const [darkMode, setDarkMode] = useState(false);
- 
+  const [darkMode, setDarkMode] = useState(null);
+
+  if ( localStorage.getItem("DarkMode") == null ) {
+    localStorage.setItem("DarkMode", false)
+  } else if ( localStorage.getItem("DarkMode") === true) {
+    setDarkMode(true);
+  };
+
   return (
-    <div className='lightBG'>
+    <div className={darkMode ? 'darkBG' : 'lightBG'}>
       <ThemeProvider theme={darkMode ? darkTheme : theme}>
         <Nav
           loginSelect={loginSelect}
@@ -66,8 +72,12 @@ function App() {
           setProjectsSelect={setProjectsSelect}
           contactSelect={contactSelect}
           setContactSelect={setContactSelect}
+
           score={score}
           setScore={setScore}
+
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
         />
 
         <main>
