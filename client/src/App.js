@@ -56,7 +56,8 @@ function App() {
 
   if ( localStorage.getItem("DarkMode") == null ) {
     localStorage.setItem("DarkMode", false)
-  } else if ( localStorage.getItem("DarkMode") === true) {
+  }
+  if ( localStorage.getItem("DarkMode") === true) {
     setDarkMode(true);
   };
 

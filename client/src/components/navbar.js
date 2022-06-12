@@ -18,6 +18,11 @@ function Nav(props) {
   console.log(props);
 
   const {
+    setLoginSelect,
+    setSignupSelect,
+    setProjectsSelect,
+    setContactSelect,
+    setScore,
     setDarkMode,
   } = props;
 
@@ -30,37 +35,39 @@ function Nav(props) {
   }
 
   return (
-    <Box
-      sx={{ flexGrow: 1 }}
-    >
-      <AppBar position='static'>
-        <Toolbar>
-          <Typography
-            variant='h6'
-            component='div'
-            sx={{ flexGrow: 1 }}
-          >
-            Victor L Perez
-          </Typography>
+    <>
+      <Box
+        sx={{ flexGrow: 1 }}
+      >
+        <AppBar position='static'>
+          <Toolbar>
+            <Typography
+              variant='h6'
+              component='div'
+              sx={{ flexGrow: 1 }}
+            >
+              Victor L Perez
+            </Typography>
 
-          <Switch
-            checked={checked}
-            onChange={handleDarkMode}
-            inputProps={{ 'aria-label': 'controlled' }}
-          />
+            <Switch
+              checked={checked}
+              onChange={handleDarkMode}
+              inputProps={{ 'aria-label': 'controlled' }}
+            />
 
-          <IconButton
-            size='large'
-            edge='start'
-            color='inherit'
-            aria-label='menu'
-            sx={{ ml: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-    </Box>
+            <IconButton
+              size='large'
+              edge='start'
+              color='inherit'
+              aria-label='menu'
+              sx={{ ml: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+      </Box>
+    </>
   )
 }
 
